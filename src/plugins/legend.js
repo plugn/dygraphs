@@ -287,10 +287,10 @@ Legend.generateLegendHTML = function(g, x, sel_points, oneEmWidth, row) {
   }
 
   var formatter = (g.getOption('legendFormatter') || Legend.defaultFormatter);
-  return formatter.call(g, data);
+  return formatter.call(g, data, row);
 }
 
-Legend.defaultFormatter = function(data) {
+Legend.defaultFormatter = function(data, row) {
   var g = data.dygraph;
 
   // TODO(danvk): deprecate this option in place of {legend: 'never'}
